@@ -1,0 +1,40 @@
+﻿@model List<crudLimpio2.Models.ProductoViewModel>
+@{
+    ViewBag.Title = "Lista Productos";
+}
+<h2>@ViewBag.Title</h2>
+<div class="row" style="text-align:right;padding:5px;">
+    <a href="@Url.Action("Nuevo", "Producto")" class="btn btn-primary">Nuevo</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+
+                    </tr>
+                </thead>
+                @foreach (var registro in Model)
+                {
+                    <tr>
+                        <td>@registro.Producto_id</td>
+                        <td>@registro.Prod_nombre</td>
+                        <td>@registro.Prod_descripción</td>
+                        <td>@registro.Prod_cantidad</td>
+                        <div>
+                            <td>
+                                <a class="btn btn-info" href="~/Producto/Editar/@registro.Producto_id">Editar</a>
+                                <a class="btn btn-danger" href="~/Producto/Eliminar/@registro.Producto_id">Eliminar</a>
+                            </td>
+                        </div>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

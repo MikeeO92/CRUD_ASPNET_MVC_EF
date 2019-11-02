@@ -1,0 +1,29 @@
+﻿@model crudLimpio2.Models.ProductoViewModel
+@{
+    ViewBag.Title = "Editar";
+}
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Editar", "Producto", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(d => d.Prod_nombre);
+            @Html.TextBoxFor(d => d.Prod_nombre, "", new { @class = "form-control" })
+
+            @Html.LabelFor(d => d.Prod_descripción);
+            @Html.TextBoxFor(d => d.Prod_descripción, "", new { @class = "form-control" })
+
+            @Html.LabelFor(d => d.Prod_cantidad);
+            @Html.TextBoxFor(d => d.Prod_cantidad, "", new { @class = "form-control" })
+
+            @Html.LabelFor(d => d.Producto_id);
+            @Html.TextBoxFor(d => d.Producto_id, "", new { @class = "form-control" })
+            <div>
+                <input type="submit" class="btn-primary" value="Guardar" />
+            </div>
+        </div>
+    </div>
+}
+
+
